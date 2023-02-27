@@ -1,0 +1,35 @@
+main{
+    height: 70vh
+}
+#header{
+    height: 9rem;
+}
+li{
+    border: 25px !important;
+    border-color: black !important;
+}
+.subrrayado {
+    text-decoration: none;
+}
+#footer{
+    width: 2rem !important;
+    height:2rem !important ;
+}
+.logo{
+    width: 100px !important;
+}
+#card{
+    width: 18rem;
+}
+#vacio{
+    height:25px;
+}
+#img_diferente{
+    max-width: 80%;
+    max-height: 80%;
+}
+footer{
+    height: 5vh;
+}
+
+
