@@ -1,6 +1,6 @@
-main{
+/* main{
     height: 86vh
-}
+} */
 #header{
     height: 9rem;
 }
@@ -18,11 +18,9 @@ li{
 .logo{
     width: 100px !important;
 }
-#card{
-    width: 18rem;  
-}
+
 #vacio{
-    height:25px;
+    height:25px; 
 }
 #img_diferente{
     max-width: 80%;
