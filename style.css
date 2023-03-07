@@ -26,8 +26,16 @@ li{
     max-width: 80%;
     max-height: 80%;
 }
+body{
+    position: relative;
+   padding-bottom: 2.5em;
+    min-height: 100vh;
+}
 footer{
     height: 5vh;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 
