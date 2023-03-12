@@ -30,3 +30,30 @@ function paintDOM(Upcoming) {
     tagToUpdate.innerHTML = template2;
 }
 paintDOM(Upcoming);
+
+let Todaslascategorias=document.getElementById ("category");
+console.log(Todaslascategorias)
+
+const categorias = [];
+  data.events.forEach(event => {
+    categorias.push(event.category)
+  ;
+}) 
+console.log(categorias)
+
+let filtrado = categorias.filter((propiedad, indice) => {
+  return categorias.indexOf(propiedad) === indice;
+ })
+ console.log(filtrado);
+
+ let body =  ` `
+ filtrado.forEach(event => {
+  console.log(event);
+ body +=  `
+ <label class="p-2">
+    <input name="fo" type="checkbox" value="D">
+    ${event}
+</label>
+ `
+ Todaslascategorias.innerHTML = body;
+}) 
