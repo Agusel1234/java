@@ -51,9 +51,10 @@ let filtrado = categorias.filter((propiedad, indice) => {
   console.log(event);
  body +=  `
  <label class="p-2">
-    <input name="fo" type="checkbox" value="D">
+    <input name="${event}" type="checkbox" value="${event}">
     ${event}
 </label>
  `
  Todaslascategorias.innerHTML = body;
 }) 
+

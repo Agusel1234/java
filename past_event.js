@@ -1,14 +1,87 @@
 console.log(data);
 
+let array= Array.from(data.events)
+
+console.log(array);
+
+// constantes capturadas
+
+const input = document.querySelector('input')
+console.log(input)
+  console.log(data.events);
+const ContenedorCheck = document.getElementById('category')
+
+
+
+
+// eventos
+input.addEventListener('input',superFiltro)
+
+ContenedorCheck.addEventListener('change',superFiltro)
+
+// llamar a funciones
+Cheackbook(array)
+// funciones
+
+function superFiltro(){
+  let arrayFiltrado1 = filtrarPorTexto(array, input.value)
+  let arrayFiltrado2 = filtrarPorcategoria(arrayFiltrado1)
+  paintDOM(arrayFiltrado2)
+}
+
+// para el buscador el filtrado
+function filtrarPorTexto(arrayDatos, texto){
+  let arrayFiltrado = arrayDatos.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()))
+  return arrayFiltrado
+}
+
+function Cheackbook (arrayDatos) {
+ let checks =''
+ let categoriasRepetidos = arrayDatos.map(elemento => elemento.category)
+ let categoria = new Set (categoriasRepetidos) 
+  categoria.forEach(element => {
+    checks += `
+    <label class="p-2">
+    <input name="${element}" type="checkbox" value="${element}">
+    ${element}
+</label>
+        `
+  });
+  ContenedorCheck.innerHTML= checks
+}
+// Lo copie por que no sabia en que habia fallado, no me daba
+function filtrarPorcategoria(arrayInfo){
+  let checkboxes = document.querySelectorAll("input[type='checkbox']")
+  console.log(checkboxes);
+  let arrayChecks = Array.from(checkboxes)
+  console.log(arrayChecks);
+  let checksChecked = arrayChecks.filter(check => check.checked)
+  console.log(checksChecked);
+  if(checksChecked.length == 0){
+      return arrayInfo
+  }
+  let checkValues = checksChecked.map(check => check.value)
+  console.log(checkValues);
+  let arrayFiltrado = arrayInfo.filter(elemento => checkValues.includes(elemento.category))
+  console.log(arrayFiltrado);
+  return arrayFiltrado
+}
+
+
+
+
+
+
+
 let Past_events=[];
-for (let i = 0; i< data.events.length; i++ ){
+for (let i = 0; i< array.length; i++ ){
     if (data.currentDate>data.events[i].date)
     Past_events.push(data.events[i])
 } 
 
 console.log(Past_events);
 
-function paintDOM(Past_events) {
+function paintDOM(arrays) {
     let template3 = ``;
 
     const tagToUpdate = document.getElementById("card");
@@ -31,7 +104,7 @@ function paintDOM(Past_events) {
 }
 paintDOM(Past_events);
 
-let Todaslascategorias=document.getElementById ("category");
+/* let Todaslascategorias=document.getElementById ("category");
 console.log(Todaslascategorias)
 
 const categorias = [];
@@ -51,9 +124,9 @@ let filtrado = categorias.filter((propiedad, indice) => {
   console.log(event);
  body +=  `
  <label class="p-2">
-    <input name="fo" type="checkbox" value="D">
+    <input name="${event}" type="checkbox" value="${event}">
     ${event}
 </label>
  `
  Todaslascategorias.innerHTML = body;
-}) 
+})  */
