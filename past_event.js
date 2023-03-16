@@ -15,7 +15,6 @@ console.log(Past_events);
 const ContenedorTarjetas = document.getElementById('card')
 const input = document.querySelector('input')
 console.log(input)
-  console.log(data.events);
 const ContenedorCheck = document.getElementById('category')
 
 
@@ -32,7 +31,7 @@ Cheackbook(Past_events)
 // funciones
 
 function superFiltro(){
-  let arrayFiltrado1 = filtrarPorTexto(array, input.value)
+  let arrayFiltrado1 = filtrarPorTexto(Past_events, input.value)
   let arrayFiltrado2 = filtrarPorcategoria(arrayFiltrado1)
   tarjeta(arrayFiltrado2)
 }
