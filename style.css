@@ -29,7 +29,7 @@ li{
 body{
     position: relative;
    padding-bottom: 2.5em;
-    min-height: 95vh;
+    min-height: 100vh;
 }
 footer{
     height: 5vh;

@@ -46,11 +46,10 @@ function tarjeta (arrayDatos) {
     <h5 class="card-title">${element.name}</h5>
     <p class="card-text">${element.description}.</p>
     <p class="card-text">Price $ ${element.price}.</p>
-    <a href="./img.html" class="btn btn-primary">See more</a>
+    <a href="./img.html?id=${element._id}" class="btn btn-primary">See more</a>
   </div>
 </div>
         `
-    
   });
   ContenedorTarjetas.innerHTML= template
 }

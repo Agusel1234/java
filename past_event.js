@@ -4,8 +4,15 @@ let array= Array.from(data.events)
 
 console.log(array);
 
-// constantes capturadas
+let Past_events=[];
+for (let i = 0; i< array.length; i++ ){
+    if (data.currentDate>data.events[i].date)
+    Past_events.push(data.events[i])
+} 
 
+console.log(Past_events);
+
+const ContenedorTarjetas = document.getElementById('card')
 const input = document.querySelector('input')
 console.log(input)
   console.log(data.events);
@@ -20,15 +27,39 @@ input.addEventListener('input',superFiltro)
 ContenedorCheck.addEventListener('change',superFiltro)
 
 // llamar a funciones
-Cheackbook(array)
+tarjeta(Past_events)
+Cheackbook(Past_events)
 // funciones
 
 function superFiltro(){
   let arrayFiltrado1 = filtrarPorTexto(array, input.value)
   let arrayFiltrado2 = filtrarPorcategoria(arrayFiltrado1)
-  paintDOM(arrayFiltrado2)
+  tarjeta(arrayFiltrado2)
 }
 
+// esta para las tarjetas
+function tarjeta (arrayDatos) {
+  if(arrayDatos.length == 0){
+    ContenedorTarjetas.innerHTML = "<h2> No hay coincidencias! </h2>"
+    return
+  }
+  let template = ` `
+  arrayDatos.forEach(element => {
+    template += `
+    </div>
+    <div class="card bg-body-secondary" style="width: 18rem;">
+  <img src= ${element.image} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${element.name}</h5>
+    <p class="card-text">${element.description}.</p>
+    <p class="card-text">Price $ ${element.price}.</p>
+    <a href="./img.html?id=${element._id}" class="btn btn-primary">See more</a>
+  </div>
+</div>
+        `
+  });
+  ContenedorTarjetas.innerHTML= template
+}
 // para el buscador el filtrado
 function filtrarPorTexto(arrayDatos, texto){
   let arrayFiltrado = arrayDatos.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()))
@@ -73,15 +104,11 @@ function filtrarPorcategoria(arrayInfo){
 
 
 
-let Past_events=[];
-for (let i = 0; i< array.length; i++ ){
-    if (data.currentDate>data.events[i].date)
-    Past_events.push(data.events[i])
-} 
 
-console.log(Past_events);
 
-function paintDOM(arrays) {
+
+
+/* function paintDOM(arrays) {
     let template3 = ``;
 
     const tagToUpdate = document.getElementById("card");
@@ -102,7 +129,7 @@ function paintDOM(arrays) {
     }
     tagToUpdate.innerHTML = template3;
 }
-paintDOM(Past_events);
+paintDOM(Past_events); */
 
 /* let Todaslascategorias=document.getElementById ("category");
 console.log(Todaslascategorias)

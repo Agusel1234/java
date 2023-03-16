@@ -1,24 +1,36 @@
-const containerDetails = document.getElementById("container_cards")
+console.log(data);
+let array= Array.from(data.events)
+console.log(array);
 
-const querySearch = window.location.search
+const querystring = location.search
 
-const param = new URLSearchParams(querySearch).get("id")
+const param = new URLSearchParams(querystring)
+const id = param.get("id")
 
-const Tarjeta = data.find(numero => numero.id == param)
+const element = array.find(numero => numero._id == id)
 
-if(excursion){
-    const peligros = excursion.peligros.join(" - ")
-    
+const containerDetails = document.querySelector("#container_cards")
+
         containerDetails.innerHTML = `
     
-        <article class="card-details">
-            <img src="${Tarjeta.imgUrl}" alt="">
-            <div class="info">
-                <h3>${Tarjeta.nombre}</h3>
-                <p><span class="bold">Descripcion:</span> ${Tarjeta.descripcion}</p>
-                <p><span class="bold">Price:</span> ${Tarjeta.excursion}</p>
-                <p><span class="bold">Peligros:</span> ${peligros}</p>
-            </div>
-        </article>`
-}
+        <div id="img_diferente" class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img src="${element.image}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">${element.name}</h5>
+              <p class="card-text">${element.description}</p>
+              <p class="card-text">Capacity: ${element.capacity}</p>
+              <p class="card-text">Assistance: ${element.assistance}</p>
+              <p class="card-text"><small class="text">Place: ${element.place}</small></p>
+              <p class="card-text"><small class="text">Price: ${element.price}</small></p>
+              <p class="card-text"><small class="text">Date: ${element.date}</small></p>
+            
+              </div>
+          </div>
+        </div>
+      </div>`
+
     
