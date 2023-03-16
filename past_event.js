@@ -32,7 +32,7 @@ Cheackbook(Past_events)
 // funciones
 
 function superFiltro(){
-  let arrayFiltrado1 = filtrarPorTexto(array, input.value)
+  let arrayFiltrado1 = filtrarPorTexto(Past_events, input.value)
   let arrayFiltrado2 = filtrarPorcategoria(arrayFiltrado1)
   tarjeta(arrayFiltrado2)
 }

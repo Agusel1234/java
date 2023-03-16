@@ -31,7 +31,7 @@ Cheackbook(Upcoming)
 // funciones
 
 function superFiltro(){
-  let arrayFiltrado1 = filtrarPorTexto(array, input.value)
+  let arrayFiltrado1 = filtrarPorTexto(Upcoming, input.value)
   let arrayFiltrado2 = filtrarPorcategoria(arrayFiltrado1)
   tarjeta(arrayFiltrado2)
 }
