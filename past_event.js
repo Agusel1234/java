@@ -1,16 +1,36 @@
-console.log(data);
+/* console.log(data);
 
 let array= Array.from(data.events)
 
-console.log(array);
+console.log(array); */
 
-let Past_events=[];
-for (let i = 0; i< array.length; i++ ){
-    if (data.currentDate>data.events[i].date)
-    Past_events.push(data.events[i])
-} 
+let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+let EventoApi;
+let api
+const Apiresponse = async () => {
+    try {
+        const response = await fetch(urlApi)
+        EventoApi = await response.json()
+        api = await EventoApi
+        console.log(api);
 
-console.log(Past_events);
+        let Past_events=[];
+            for (let i = 0; i< (api.events).length; i++ ){
+                if (api.currentDate>(api.events)[i].date)
+                Past_events.push(api.events[i])   
+        tarjeta(Past_events)
+        Cheackbook(Past_events)
+        console.log(Past_events)
+              
+            } 
+      }
+    catch (error){
+     console.log(error) 
+    }
+}
+
+Apiresponse()
+
 
 const ContenedorTarjetas = document.getElementById('card')
 const input = document.querySelector('input')
@@ -27,8 +47,8 @@ input.addEventListener('input',superFiltro)
 ContenedorCheck.addEventListener('change',superFiltro)
 
 // llamar a funciones
-tarjeta(Past_events)
-Cheackbook(Past_events)
+/* tarjeta(Past_events)
+Cheackbook(Past_events) */
 // funciones
 
 function superFiltro(){

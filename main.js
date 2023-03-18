@@ -1,14 +1,32 @@
-console.log(data);
+/* console.log(data);
 let array= Array.from(data.events)
 
-console.log(array);
+console.log(array); */
+
+let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+let EventoApi;
+let api
+const Apiresponse = async () => {
+    try {
+        const response = await fetch(urlApi)
+        EventoApi = await response.json()
+        api = await EventoApi
+        console.log(api);
+        tarjeta(api.events)
+        Cheackbook(api.events)
+    }
+    catch (error){
+     console.log(error) 
+    }
+}
+
+Apiresponse()
 
 // constantes capturadas
 
 const ContenedorTarjetas = document.getElementById('card')
 const input = document.querySelector('input')
 console.log(input)
-  console.log(data.events);
 const ContenedorCheck = document.getElementById('category')
 
 
@@ -20,12 +38,12 @@ input.addEventListener('input',superFiltro)
 ContenedorCheck.addEventListener('change',superFiltro)
 
 // llamar a funciones
-tarjeta(array)
-Cheackbook(array)
+/* tarjeta(array)
+Cheackbook(array) */
 // funciones
 
 function superFiltro(){
-  let arrayFiltrado1 = filtrarPorTexto(array, input.value)
+  let arrayFiltrado1 = filtrarPorTexto(api.events, input.value)
   let arrayFiltrado2 = filtrarPorcategoria(arrayFiltrado1)
   tarjeta(arrayFiltrado2)
 }

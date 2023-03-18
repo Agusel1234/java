@@ -1,22 +1,35 @@
-console.log(data);
+ console.log(data);
 let array= Array.from(data.events)
 console.log(array);
+
+let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+let EventoApi;
+let api
+const Apiresponse = async () => {
+    try {
+        const response = await fetch(urlApi)
+        EventoApi = await response.json()
+        api = await EventoApi
+        console.log(api);
+    }
+    catch (error){
+     console.log(error) 
+    }
+}
 
 const querystring = location.search
 
 const param = new URLSearchParams(querystring)
-const id = param.get("id")
-
-const element = array.find(numero => numero._id == id)
 
 const containerDetails = document.querySelector("#container_cards")
-
+const id = param.get("id")
+const element = (array).find(numero => numero._id == id)
         containerDetails.innerHTML = `
     
         <div id="img_diferente" class="card mb-3">
         <div class="row g-0">
           <div class="col-md-6">
-            <img src="${element.image}" class="img-fluid rounded-start" alt="...">
+            <img src="${element.image}" class="img-fluid rounded-start" alt="foto">
           </div>
           <div class="col-md-6">
             <div class="card-body">
@@ -32,5 +45,8 @@ const containerDetails = document.querySelector("#container_cards")
           </div>
         </div>
       </div>`
+
+
+
 
     

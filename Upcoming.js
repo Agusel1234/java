@@ -1,15 +1,36 @@
-console.log(data);
+/* console.log(data);
 
 let array= Array.from(data.events)
 
-console.log(array);
-let Upcoming=[];
-for (let i = 0; i< data.events.length; i++ ){
-    if (data.currentDate<data.events[i].date)
-Upcoming.push(data.events[i])
-}
+console.log(array); */
+let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+let EventoApi;
+let api
+const Apiresponse = async () => {
+    try {
+        const response = await fetch(urlApi)
+        EventoApi = await response.json()
+        api = await EventoApi
+        console.log(api);
+            let Upcoming=[];
+            for (let i = 0; i< api.events.length; i++ ){
+                if (api.currentDate<api.events[i].date)
+            Upcoming.push(api.events[i])
+            }
+           console.log(Upcoming) 
+        tarjeta(Upcoming)
+        Cheackbook(Upcoming)             
+            } 
+    catch (error){
+     console.log(error) 
+    }
+  }
 
-console.log(Upcoming);
+Apiresponse()
+
+
+
+/* console.log(Upcoming); */
 
 const ContenedorTarjetas = document.getElementById('card')
 const input = document.querySelector('input')
@@ -25,11 +46,11 @@ input.addEventListener('input',superFiltro)
 
 ContenedorCheck.addEventListener('change',superFiltro)
 
-// llamar a funciones
+/* // llamar a funciones
 tarjeta(Upcoming)
 Cheackbook(Upcoming)
 // funciones
-
+ */
 function superFiltro(){
   let arrayFiltrado1 = filtrarPorTexto(Upcoming, input.value)
   let arrayFiltrado2 = filtrarPorcategoria(arrayFiltrado1)
