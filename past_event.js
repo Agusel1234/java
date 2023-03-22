@@ -17,7 +17,8 @@ const Apiresponse = async () => {
         let Past_events=[];
             for (let i = 0; i< (api.events).length; i++ ){
                 if (api.currentDate>(api.events)[i].date)
-                Past_events.push(api.events[i])   
+                Past_events.push(api.events[i]) 
+
         tarjeta(Past_events)
         Cheackbook(Past_events)
         console.log(Past_events)
@@ -35,7 +36,7 @@ Apiresponse()
 const ContenedorTarjetas = document.getElementById('card')
 const input = document.querySelector('input')
 console.log(input)
-  console.log(data.events);
+
 const ContenedorCheck = document.getElementById('category')
 
 

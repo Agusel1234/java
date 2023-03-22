@@ -1,4 +1,4 @@
-let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+/* let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 let EventoApi;
 let api
 const Apiresponse = async () => {
@@ -26,7 +26,7 @@ const Apiresponse = async () => {
 } 
 Apiresponse() 
 
-
+ */
 
   let Past_Events=[];
   for (let i = 0; i< (dataNUEVA.events).length; i++ ){
