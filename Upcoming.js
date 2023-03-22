@@ -6,13 +6,14 @@ console.log(array); */
 let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 let EventoApi;
 let api
+let Upcoming=[];
 const Apiresponse = async () => {
     try {
         const response = await fetch(urlApi)
         EventoApi = await response.json()
         api = await EventoApi
         console.log(api);
-            let Upcoming=[];
+           
             for (let i = 0; i< api.events.length; i++ ){
                 if (api.currentDate<api.events[i].date)
             Upcoming.push(api.events[i])

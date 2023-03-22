@@ -6,7 +6,8 @@ console.log(array); */
 
 let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 let EventoApi;
-let api
+let api   
+let Past_events=[];
 const Apiresponse = async () => {
     try {
         const response = await fetch(urlApi)
@@ -14,14 +15,13 @@ const Apiresponse = async () => {
         api = await EventoApi
         console.log(api);
 
-        let Past_events=[];
             for (let i = 0; i< (api.events).length; i++ ){
                 if (api.currentDate>(api.events)[i].date)
                 Past_events.push(api.events[i]) 
-
+              console.log(Past_events)
         tarjeta(Past_events)
         Cheackbook(Past_events)
-        console.log(Past_events)
+        
               
             } 
       }
