@@ -3,7 +3,7 @@ let array= Array.from(data.events)
 
 console.log(array); */
 
-let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+ let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 let EventoApi;
 let api
 const Apiresponse = async () => {
@@ -20,7 +20,7 @@ const Apiresponse = async () => {
     }
 }
 
-Apiresponse()
+Apiresponse() 
 
 // constantes capturadas
 
@@ -38,8 +38,8 @@ input.addEventListener('input',superFiltro)
 ContenedorCheck.addEventListener('change',superFiltro)
 
 // llamar a funciones
-/* tarjeta(array)
-Cheackbook(array) */
+/*  tarjeta(array)
+Cheackbook(array)  */
 // funciones
 
 function superFiltro(){
