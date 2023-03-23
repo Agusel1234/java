@@ -1,20 +1,19 @@
-/* let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
 let EventoApi;
 let api
+let Upcoming=[];
+let Past_Events=[];
 const Apiresponse = async () => {
     try {
         const response = await fetch(urlApi)
         EventoApi = await response.json()
-        api = await EventoApi.events
+        api = await EventoApi
         console.log(api)
-          let Past_Events=[];
   for (let i = 0; i< (api.events).length; i++ ){
       if (api.currentDate>(api.events)[i].date)
       Past_Events.push(api.events[i]) 
     } 
     console.log();
-   
-    let Upcoming=[];
     for (let i = 0; i< api.events.length; i++ ){
         if (api.currentDate<api.events[i].date)
     Upcoming.push(api.events[i])}
@@ -26,20 +25,7 @@ const Apiresponse = async () => {
 } 
 Apiresponse() 
 
- */
-
-  let Past_Events=[];
-  for (let i = 0; i< (dataNUEVA.events).length; i++ ){
-      if (dataNUEVA.currentDate>(dataNUEVA.events)[i].date)
-      Past_Events.push(dataNUEVA.events[i]) 
-    } 
-    console.log();
-   
-    let Upcoming=[];
-    for (let i = 0; i< dataNUEVA.events.length; i++ ){
-        if (dataNUEVA.currentDate<dataNUEVA.events[i].date)
-    Upcoming.push(dataNUEVA.events[i])}
-    console.log(Upcoming);
+ 
 
 
   const MaximoPorcentajeEvento = document.querySelector(`table tr:nth-child(2) td:nth-child(1)`);
