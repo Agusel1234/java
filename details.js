@@ -31,11 +31,11 @@ function IDs(lista) {
         containerDetails.innerHTML = `
     
         <div id="img_diferente" class="card mb-3 align-content-center">
-        <div class="row g-0 justify-content-center align-content-center bg-secundary">
-          <div class="col-md-10 align-content-center justify-content-center">
+        <div class="row g-0 justify-content-center align-content-center bg-dark text-light">
+          <div class="col-10 align-content-center justify-content-center">
             <img id="imag" src="${element.image}" class="img-fluid rounded-start " alt="foto">
           </div>
-          <div class="col-md-10 ">
+          <div class="col-10 ">
             <div class="card-body">
               <h5 class="card-title">${element.name}</h5>
               <p class="card-text">${element.description}</p>

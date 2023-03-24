@@ -12,7 +12,7 @@ li{
     text-decoration: none;
 }
 .imagenes{
-max-height: 30vh;
+max-height: 30vh !important;
 }
 #footer{
     width: 2rem !important;
@@ -33,6 +33,7 @@ body{
     position: relative;
    padding-bottom: 2.5rem;
     min-height: 100vh;
+    background-color: rgb(7, 7, 7) !important 
 /*     display: flex;
     flex-direction: column;
     min-height: 100vh;
