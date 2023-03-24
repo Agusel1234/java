@@ -58,7 +58,7 @@ function tarjeta (arrayDatos) {
   arrayDatos.forEach(element => {
     template += `
     </div>
-    <div class="card bg-dark text-light" style="width: 22rem;">
+    <div class="card bg-dark text-light" style="width: 20rem;">
   <img id="ima"  class="imagenes" src= ${element.image} class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${element.name}</h5>
