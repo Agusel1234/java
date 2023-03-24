@@ -2,7 +2,7 @@
     height: 86vh
 } */
 #header{
-    height: 9rem;
+    height: 5rem;
 }
 li{
     border: 25px !important;
@@ -10,6 +10,9 @@ li{
 }
 .subrrayado {
     text-decoration: none;
+}
+.imagenes{
+max-height: 30vh;
 }
 #footer{
     width: 2rem !important;
@@ -28,14 +31,25 @@ li{
 }
 body{
     position: relative;
-   padding-bottom: 2.5em;
+   padding-bottom: 2.5rem;
     min-height: 100vh;
+/*     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+ */
 }
 footer{
-    height: 5vh;
-    position: absolute;
+    background-color: rgb(7, 7, 7);
+    min-height: 2vh;
+  position: absolute;
     bottom: 0;
     width: 100%;
+ /*    margin-top: auto; */
 }
-
+#ima{
+    padding-top:10px !important ; 
+}
+#imag{
+    padding:20px !important ; 
+}
 

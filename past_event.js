@@ -68,13 +68,13 @@ function tarjeta (arrayDatos) {
   arrayDatos.forEach(element => {
     template += `
     </div>
-    <div class="card bg-body-secondary" style="width: 18rem;">
-  <img src= ${element.image} class="card-img-top" alt="...">
+    <div class="card bg-body-secondary" style="width: 22rem;">
+  <img class="imagenes" src= ${element.image} class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${element.name}</h5>
     <p class="card-text">${element.description}.</p>
     <p class="card-text">Price $ ${element.price}.</p>
-    <a href="./img.html?id=${element._id}" class="btn btn-primary">See more</a>
+    <a href="./details.html?id=${element._id}" class="btn btn-primary">See more</a>
   </div>
 </div>
         `
